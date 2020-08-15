@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextViewCountDown;
     private Button mButtonStart;
     private Button mButtonReset;
+    private Button mButtonClaim;
     private CountDownTimer mCountDownTimer;
     private boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;  //default 30 mins
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         mTextViewCountDown = findViewById(R.id.text_view_countdown);
         mButtonStart = findViewById(R.id.btn_start);
+        mButtonClaim = findViewById(R.id.claim_btn);
 
         mButtonStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "90:00":
                         mTimeLeftInMillis = 5400000;
+                        break;
+                    case "00:05":
+                        mTimeLeftInMillis = 5000;
                         break;
                     default:
                 }
@@ -71,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 mTimerRunning = false;
                 //popup? about the cat image
                 mTextViewCountDown.setText("Congrats!");
+                mButtonClaim.setVisibility(View.VISIBLE);
             }
         }.start();
 
