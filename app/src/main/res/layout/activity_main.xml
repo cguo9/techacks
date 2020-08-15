@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/text_view_countdown"
         android:layout_width="369dp"
-        android:layout_height="80dp"
+        android:layout_height="108dp"
         android:fontFamily="casual"
         android:gravity="center"
         android:text="00:00"
@@ -20,13 +20,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
 
     <Button
         android:id="@+id/btn_start"
-        android:layout_width="112dp"
-        android:layout_height="61dp"
+        android:layout_width="110dp"
+        android:layout_height="54dp"
         android:text="Start"
         android:textColor="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_countdown"
-        app:layout_constraintVertical_bias="0.439" />
+        app:layout_constraintVertical_bias="0.369" />
 
     <Spinner
         android:id="@+id/dropdown"
@@ -45,8 +47,25 @@
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/btn_start"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_countdown" />
+        app:layout_constraintTop_toBottomOf="@+id/text_view_countdown"
+        app:layout_constraintVertical_bias="0.529" />
+
+    <Button
+        android:id="@+id/claim_btn"
+        android:layout_width="112dp"
+        android:layout_height="51dp"
+        android:text="Claim"
+        android:textColor="#03A9F4"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start"
+        app:layout_constraintVertical_bias="0.146"
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
