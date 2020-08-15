@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView cat = (ImageView) pop.findViewById(R.id.cat_img);
         TextView cat_label = (TextView) pop.findViewById(R.id.cat_label);
         Random rand = new Random();
-        int i = rand.nextInt(images.length - 1);
+        int i = rand.nextInt(images.length);
 
         switch(images[i]){
             case "cat1":
