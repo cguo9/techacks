@@ -1,6 +1,7 @@
 package com.example.testing;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -107,6 +108,13 @@ public class MainActivity extends AppCompatActivity {
         txtclose = (TextView) cat1.findViewById(R.id.pop_close);
         btn_home = (Button) cat1.findViewById(R.id.btn_home);
         btn_collect = (Button) cat1.findViewById(R.id.btn_collect);
+        btn_collect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Collections.class);
+                startActivity(intent);
+            }
+        });
         txtclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
