@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
         int sec = (int) (mTimeLeftInMillis / 1000) % 60;
         String timeLeftFormat = String.format(Locale.getDefault(),"%02d:%02d", min, sec);
         mTextViewCountDown.setText(timeLeftFormat);
+
+        System.out.println("Hello");
     }
 
 }
