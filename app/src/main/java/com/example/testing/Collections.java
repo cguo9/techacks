@@ -24,6 +24,14 @@ public class Collections extends AppCompatActivity {
         cats.add(new Cat("Tom", "https://icon-library.com/images/white-question-mark-icon-png/white-question-mark-icon-png-11.jpg"));
         cats.add(new Cat("Felix", "https://icon-library.com/images/white-question-mark-icon-png/white-question-mark-icon-png-11.jpg"));
         cats.add(new Cat("Hello Kitty", "https://icon-library.com/images/white-question-mark-icon-png/white-question-mark-icon-png-11.jpg"));
+        cats.add(new Cat("Pusheen", "https://icon-library.com/images/white-question-mark-icon-png/white-question-mark-icon-png-11.jpg"));
+        cats.add(new Cat("Garfield", "https://icon-library.com/images/white-question-mark-icon-png/white-question-mark-icon-png-11.jpg"));
+        cats.add(new Cat("Cat in the Hat", "https://icon-library.com/images/white-question-mark-icon-png/white-question-mark-icon-png-11.jpg"));
+        cats.add(new Cat("Puss in Boots", "https://icon-library.com/images/white-question-mark-icon-png/white-question-mark-icon-png-11.jpg"));
+        cats.add(new Cat("Cheshire Cat", "https://icon-library.com/images/white-question-mark-icon-png/white-question-mark-icon-png-11.jpg"));
+        cats.add(new Cat("CatDog", "https://icon-library.com/images/white-question-mark-icon-png/white-question-mark-icon-png-11.jpg"));
+
+
 
         for (int i = 0; i < MainActivity.found.length; i++){
             if (MainActivity.found[i] == true){
@@ -37,6 +45,24 @@ public class Collections extends AppCompatActivity {
                     case 2:
                         cats.get(i).setImageUrl("https://static.miraheze.org/allthetropeswiki/4/4b/Hello_Kitty_Pink_2981.jpg");
                         break;
+                    case 3:
+                        cats.get(i).setImageUrl("https://www.kindpng.com/picc/m/41-415250_how-to-draw-pusheen-the-cat-cartoon-cat.png");
+                        break;
+                    case 4:
+                        cats.get(i).setImageUrl("https://vignette.wikia.nocookie.net/character-stats-and-profiles/images/0/09/Garfield.png/revision/latest/scale-to-width-down/340?cb=20170701143047");
+                        break;
+                    case 5:
+                        cats.get(i).setImageUrl("https://www.seussville.com/wp-content/uploads/2019/11/character-Cat-in-the-Hat.png");
+                        break;
+                    case 6:
+                        cats.get(i).setImageUrl("https://static.onecms.io/wp-content/uploads/sites/20/2011/10/puss-boots-300.jpg");
+                        break;
+                    case 7:
+                        cats.get(i).setImageUrl("https://i.pinimg.com/originals/ec/1f/95/ec1f9587e0bb9bb9a24b320ccd46972e.jpg");
+                        break;
+                    case 8:
+                        cats.get(i).setImageUrl("https://www.netclipart.com/pp/m/427-4274539_cat-dog-png-cartoon-catdog.png");
+                        break;
                 }
             }
         }
@@ -45,6 +71,6 @@ public class Collections extends AppCompatActivity {
         adapter.setCats(cats);
 
         collectRecView.setAdapter(adapter);
-        collectRecView.setLayoutManager(new GridLayoutManager(this, 2));
+        collectRecView.setLayoutManager(new GridLayoutManager(this, 3));
     }
 }
