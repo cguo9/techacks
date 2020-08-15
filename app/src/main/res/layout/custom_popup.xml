@@ -29,7 +29,7 @@
             android:layout_height="217dp"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:src="@drawable/cat_1" />
+            android:src="@drawable/tom" />
 
 
         <TextView

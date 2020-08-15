@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
     private boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;  //default 30 mins
 
-    static final String[] images = {"cat1","pusheen","tom"};
-    static boolean[] found = {false,false,false};
+    static final String[] images = {"tom", "felix","hello_kitty", "pusheen", "garfield", "cat_hat",
+    "puss_boots", "chesire", "catdog"};
+    static boolean[] found = {false,false,false,false,false,false,false,false,false};
 
     Dialog pop;
     @Override
@@ -117,21 +118,52 @@ public class MainActivity extends AppCompatActivity {
         TextView cat_label = (TextView) pop.findViewById(R.id.cat_label);
         Random rand = new Random();
         int i = rand.nextInt(images.length);
-
+        //{"tom", "felix","hello_kitty", "pusheen", "garfield", "cat_hat",
+        //    "puss_boots", "chesire", "catdog"};
         switch(images[i]){
-            case "cat1":
-                cat.setImageResource(R.drawable.cat_1);
-                cat_label.setText("You found a cute cat!");
+            case "tom":
+                cat.setImageResource(R.drawable.tom);
+                cat_label.setText("You found Tom cat!");
+                found[i] = true;
+                break;
+            case "felix":
+                cat.setImageResource(R.drawable.felix);
+                cat_label.setText("You found Felix!");
+                found[i] = true;
+                break;
+            case "hello_kitty":
+                cat.setImageResource(R.drawable.hello_kitty);
+                cat_label.setText("You found Hello Kitty!");
                 found[i] = true;
                 break;
             case "pusheen":
-                cat.setImageResource(R.drawable.cat2);
-                cat_label.setText("You found a pusheen!");
+                cat.setImageResource(R.drawable.pusheen);
+                cat_label.setText("You found a Pusheen!");
                 found[i] = true;
                 break;
-            case "tom":
-                cat.setImageResource(R.drawable.cat3);
-                cat_label.setText("You found a praying cat!");
+            case "garfield":
+                cat.setImageResource(R.drawable.garfield);
+                cat_label.setText("You found Felix!");
+                found[i] = true;
+                break;
+            case "cat_hat":
+                cat.setImageResource(R.drawable.cat_hat);
+                cat_label.setText("You found the Cat in the Hat!");
+                found[i] = true;
+                break;
+            case "puss_boots":
+                cat.setImageResource(R.drawable.puss_boots);
+                cat_label.setText("You found Puss in Boots!");
+                found[i] = true;
+                break;
+            case "chesire":
+                cat.setImageResource(R.drawable.chesire);
+                cat_label.setText("You found Chesire Cat!");
+                found[i] = true;
+                break;
+            case "catdog":
+                cat.setImageResource(R.drawable.cat_dog);
+                cat_label.setText("You found Catdog!");
                 found[i] = true;
                 break;
             default:
