@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">testing</string>
+
+    <string-array name="names">
+        <item>30:00</item>
+        <item>60:00</item>
+        <item>90:00</item>
+    </string-array>
+
+</resources>
