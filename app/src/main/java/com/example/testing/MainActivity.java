@@ -4,17 +4,22 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.w3c.dom.Text;
+
 import java.util.Locale;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private static final long START_TIME_IN_MILLIS = 1800000;
@@ -27,13 +32,16 @@ public class MainActivity extends AppCompatActivity {
     private boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;  //default 30 mins
 
-    Dialog cat1;
+    static final String[] images = {"cat1","pusheen","tom"};
+    static boolean[] found = {false,false,false};
+
+    Dialog pop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cat1 = new Dialog(this);
+        pop = new Dialog(this);
         final Spinner time_select = (Spinner) findViewById(R.id.dropdown);
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.names));
@@ -104,10 +112,35 @@ public class MainActivity extends AppCompatActivity {
         TextView txtclose;
         Button btn_home;
         Button btn_collect;
-        cat1.setContentView(R.layout.custom_popup);
-        txtclose = (TextView) cat1.findViewById(R.id.pop_close);
-        btn_home = (Button) cat1.findViewById(R.id.btn_home);
-        btn_collect = (Button) cat1.findViewById(R.id.btn_collect);
+        pop.setContentView(R.layout.custom_popup);
+        ImageView cat = (ImageView) pop.findViewById(R.id.cat_img);
+        TextView cat_label = (TextView) pop.findViewById(R.id.cat_label);
+        Random rand = new Random();
+        int i = rand.nextInt(images.length - 1);
+
+        switch(images[i]){
+            case "cat1":
+                cat.setImageResource(R.drawable.cat_1);
+                cat_label.setText("You found a cute cat!");
+                found[i] = true;
+                break;
+            case "pusheen":
+                cat.setImageResource(R.drawable.cat2);
+                cat_label.setText("You found a pusheen!");
+                found[i] = true;
+                break;
+            case "tom":
+                cat.setImageResource(R.drawable.cat3);
+                cat_label.setText("You found a praying cat!");
+                found[i] = true;
+                break;
+            default:
+        }
+
+
+        txtclose = (TextView) pop.findViewById(R.id.pop_close);
+        btn_home = (Button) pop.findViewById(R.id.btn_home);
+        btn_collect = (Button) pop.findViewById(R.id.btn_collect);
         btn_collect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,12 +151,13 @@ public class MainActivity extends AppCompatActivity {
         txtclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cat1.dismiss();
+                pop.dismiss();
             }
         });
         //cat1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        cat1.show();
+        pop.show();
     }
+
 
 }
 
