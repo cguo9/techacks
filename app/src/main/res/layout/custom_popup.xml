@@ -34,13 +34,14 @@
 
         <TextView
             android:id="@+id/cat_label"
-            android:layout_width="wrap_content"
+            android:layout_width="296dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15dp"
+            android:gravity="center"
             android:text="Kitty 1 found!"
             android:textColor="@color/bluelight"
-            android:textSize="30sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <Button

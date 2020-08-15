@@ -123,47 +123,47 @@ public class MainActivity extends AppCompatActivity {
         switch(images[i]){
             case "tom":
                 cat.setImageResource(R.drawable.tom);
-                cat_label.setText("You found Tom cat!");
+                cat_label.setText("Tom cat");
                 found[i] = true;
                 break;
             case "felix":
                 cat.setImageResource(R.drawable.felix);
-                cat_label.setText("You found Felix!");
+                cat_label.setText("Felix");
                 found[i] = true;
                 break;
             case "hello_kitty":
                 cat.setImageResource(R.drawable.hello_kitty);
-                cat_label.setText("You found Hello Kitty!");
+                cat_label.setText("Hello Kitty");
                 found[i] = true;
                 break;
             case "pusheen":
                 cat.setImageResource(R.drawable.pusheen);
-                cat_label.setText("You found a Pusheen!");
+                cat_label.setText("Pusheen");
                 found[i] = true;
                 break;
             case "garfield":
                 cat.setImageResource(R.drawable.garfield);
-                cat_label.setText("You found Felix!");
+                cat_label.setText("Garfield");
                 found[i] = true;
                 break;
             case "cat_hat":
                 cat.setImageResource(R.drawable.cat_hat);
-                cat_label.setText("You found the Cat in the Hat!");
+                cat_label.setText("Cat in the Hat");
                 found[i] = true;
                 break;
             case "puss_boots":
                 cat.setImageResource(R.drawable.puss_boots);
-                cat_label.setText("You found Puss in Boots!");
+                cat_label.setText("Puss in Boots");
                 found[i] = true;
                 break;
             case "chesire":
                 cat.setImageResource(R.drawable.chesire);
-                cat_label.setText("You found Chesire Cat!");
+                cat_label.setText("Chesire Cat");
                 found[i] = true;
                 break;
             case "catdog":
                 cat.setImageResource(R.drawable.cat_dog);
-                cat_label.setText("You found Catdog!");
+                cat_label.setText("Catdog");
                 found[i] = true;
                 break;
             default:
