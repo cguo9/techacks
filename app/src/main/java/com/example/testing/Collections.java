@@ -5,7 +5,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -66,6 +69,16 @@ public class Collections extends AppCompatActivity {
                 }
             }
         }
+
+        Button btn_gobacktime;
+        btn_gobacktime = findViewById(R.id.gobacktime);
+        btn_gobacktime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Collections.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         CollectRecViewAdapter adapter = new CollectRecViewAdapter(this);
         adapter.setCats(cats);
