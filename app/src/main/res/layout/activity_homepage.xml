@@ -44,18 +44,18 @@
         android:layout_height="170dp"
         android:background="@android:color/white"
         android:contentDescription="@string/app_name"
-        android:fontFamily="sans-serif-condensed"
         android:text="Study Hard and Become the Cat Lord!"
         android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="@android:color/holo_orange_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.175"
-        tools:text="Study Hard and Become the Cat Lord!" />
+        tools:text="Study Hard and Become the Cat Lord!"
+        android:textColor="@android:color/holo_orange_light" />
 
     <TextView
         android:id="@+id/Subline"
