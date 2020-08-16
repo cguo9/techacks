@@ -8,8 +8,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/collectRecView"
         android:layout_centerHorizontal="true"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go back to timer"
+        android:id="@+id/gobacktime"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/collectRecView"/>
+
 </RelativeLayout>
+
