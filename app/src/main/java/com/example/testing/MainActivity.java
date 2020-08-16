@@ -28,7 +28,6 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private static final long START_TIME_IN_MILLIS = 1800000;
-
     private TextView mTextViewCountDown;
     private Button mButtonStart;
     private Button mButtonReset;
