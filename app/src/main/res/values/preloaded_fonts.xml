@@ -2,5 +2,6 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/chelsea_market</item>
+        <item>@font/copse</item>
     </array>
 </resources>

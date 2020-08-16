@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -46,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
     static boolean[] found = {false,false,false,false,false,false,false,false,false};
     Spinner time_select;
     Dialog pop;
-
+    WebView web_left;
+    WebView web_right;
     protected static boolean isVisible = false;
 
     @Override
@@ -66,6 +69,19 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        web_left = findViewById(R.id.gif_l);
+        web_right = findViewById(R.id.gif_r);
+        WebSettings settings_left = web_left.getSettings();
+        WebSettings settings_right = web_right.getSettings();
+        settings_left.setJavaScriptEnabled(true);
+        settings_right.setJavaScriptEnabled(true);
+        String file_l = "file:android_asset/cat_right.gif";
+
+        String file_r = "file:android_asset/gif_l.gif";
+        web_right.loadUrl(file_r);
+        web_left.loadUrl(file_l);
+
 
         ImageButton imgbtn_c;
         imgbtn_c = (ImageButton) findViewById(R.id.imgbtn_collections);

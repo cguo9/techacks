@@ -4,8 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/lavender">
 
+    <WebView
+        android:id="@+id/gif_l"
+        android:layout_width="119dp"
+        android:layout_height="117dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/text_view_countdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toEndOf="@+id/gif_r"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/gif_r"
+        android:layout_width="119dp"
+        android:layout_height="117dp"
+
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_view_countdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_view_countdown"
@@ -17,10 +39,10 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="40dp"
-        android:fontFamily="@font/chelsea_market"
+        android:fontFamily="@font/copse"
         android:gravity="center"
         android:text="30:00"
-        android:textColor="#1664FF"
+        android:textColor="@color/colorPrimary"
         android:textIsSelectable="false"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -39,8 +61,10 @@
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginBottom="22dp"
+        android:fontFamily="@font/copse"
         android:text="Start"
-        android:textColor="#03A9F4"
+        android:textColor="@color/btn_dark"
+        android:background="@color/btn_color"
         app:layout_constraintBottom_toTopOf="@+id/claim_btn"
         app:layout_constraintEnd_toEndOf="@+id/claim_btn"
         app:layout_constraintHorizontal_bias="0.0"
@@ -55,6 +79,13 @@
         android:addStatesFromChildren="false"
         android:animateLayoutChanges="false"
         android:gravity="center"
+        android:clickable="true"
+        android:dropDownVerticalOffset="-10dip"
+        android:dropDownHorizontalOffset="0dip"
+        android:background="@drawable/spinner_style"
+        android:textColor="@color/btn_dark"
+        android:popupBackground="@color/btn_color"
+        style="@style/mySpinnerItemStyle"
         app:layout_constraintBottom_toTopOf="@+id/btn_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -68,8 +99,9 @@
         android:layout_marginBottom="37dp"
         android:onClick="ShowPopup"
         android:text="Claim"
-        android:textColor="#03A9F4"
         android:visibility="invisible"
+        android:textColor="@color/btn_dark"
+        android:background="@color/btn_color"
         app:layout_constraintBottom_toTopOf="@+id/imgbtn_collections"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

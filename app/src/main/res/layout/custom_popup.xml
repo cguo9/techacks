@@ -10,7 +10,7 @@
         android:id="@+id/pop_close"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:textColor="@color/bluelight"
+        android:textColor="@color/colorPrimary"
         android:text="X"
         android:textStyle="bold"
         android:layout_gravity="end"
@@ -40,7 +40,7 @@
             android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="Kitty 1 found!"
-            android:textColor="@color/bluelight"
+            android:textColor="@color/colorPrimary"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/buttonstyle"
             android:text="Home"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimary" />
 
         <Button
             android:id="@+id/btn_collect"
@@ -62,7 +62,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/buttonstyle"
             android:text="Go to Collection"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/colorPrimary" />
     </LinearLayout>
 
 </LinearLayout>
