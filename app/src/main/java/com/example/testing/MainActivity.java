@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFinish() {
                 mTimerRunning = false;
                 //popup? about the cat image
-                mTextViewCountDown.setText("Congrats!");
+                mTextViewCountDown.setText("Finished!");
                 mButtonClaim.setVisibility(View.VISIBLE);
 
             }
