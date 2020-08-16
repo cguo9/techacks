@@ -86,7 +86,7 @@ public class Collections extends AppCompatActivity {
         imgbtn_h2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Collections.this, MainActivity.class);
+                Intent intent = new Intent(Collections.this, HomePage.class);
                 startActivity(intent);
             }
         });

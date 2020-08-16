@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         imgbtn_h.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent = new Intent(MainActivity.this, HomePage.class);
                 startActivity(intent);
             }
         });
