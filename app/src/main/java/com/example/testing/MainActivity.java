@@ -7,9 +7,11 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -22,6 +24,9 @@ import java.util.Locale;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
+
+
     private static final long START_TIME_IN_MILLIS = 1800000;
 
     private TextView mTextViewCountDown;
@@ -39,8 +44,19 @@ public class MainActivity extends AppCompatActivity {
     Dialog pop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageButton imgbtn_c;
+        imgbtn_c = (ImageButton) findViewById(R.id.imgbtn_collections);
+        imgbtn_c.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Collections.class);
+                startActivity(intent);
+            }
+        });
 
         pop = new Dialog(this);
         final Spinner time_select = (Spinner) findViewById(R.id.dropdown);
@@ -180,6 +196,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
         txtclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -189,6 +207,7 @@ public class MainActivity extends AppCompatActivity {
         //cat1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         pop.show();
     }
+
 
 
 }
