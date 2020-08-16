@@ -1,6 +1,9 @@
 package com.example.testing;
 
+import android.app.ActivityManager;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,10 +19,12 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.w3c.dom.Text;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
@@ -28,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private static final long START_TIME_IN_MILLIS = 1800000;
-
     private TextView mTextViewCountDown;
     private Button mButtonStart;
     private Button mButtonReset;
@@ -40,8 +44,23 @@ public class MainActivity extends AppCompatActivity {
     static final String[] images = {"tom", "felix","hello_kitty", "pusheen", "garfield", "cat_hat",
     "puss_boots", "chesire", "catdog"};
     static boolean[] found = {false,false,false,false,false,false,false,false,false};
-
+    Spinner time_select;
     Dialog pop;
+
+    protected static boolean isVisible = false;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setVisible(true);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        setVisible(false);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -59,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         pop = new Dialog(this);
-        final Spinner time_select = (Spinner) findViewById(R.id.dropdown);
+        time_select = (Spinner) findViewById(R.id.dropdown);
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.names));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -94,7 +113,12 @@ public class MainActivity extends AppCompatActivity {
 
         updateCountDownText();
     }
-
+    private boolean hasLeft(){
+        ActivityManager.RunningAppProcessInfo myProcess = new ActivityManager.RunningAppProcessInfo();
+        ActivityManager.getMyMemoryState(myProcess);
+        Boolean isInBackground = myProcess.importance != ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND;
+        return isInBackground;
+    }
 
     private void startTimer() {
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis,1000) {
@@ -102,6 +126,13 @@ public class MainActivity extends AppCompatActivity {
             public void onTick(long l) {
                 mTimeLeftInMillis = l;
                 updateCountDownText();
+                if (hasLeft()){
+//                    Intent intent = new Intent(MainActivity.this, Collections.class);
+//                    startActivity(intent);
+//                    ShowPopupLeave(null);
+//                    System.out.println("displaying");
+                    openDialog();
+                }
             }
 
             @Override
@@ -110,19 +141,75 @@ public class MainActivity extends AppCompatActivity {
                 //popup? about the cat image
                 mTextViewCountDown.setText("Congrats!");
                 mButtonClaim.setVisibility(View.VISIBLE);
-            }
-        }.start();
 
+            }
+
+        }.start();
+        mTimerRunning = true;
     }
 
+    private void resetTimer(){
+        mCountDownTimer.cancel();
+        mTimerRunning = false;
+        mButtonStart.setVisibility(View.VISIBLE);
+        time_select.setVisibility(View.VISIBLE);
+        mButtonClaim.setVisibility(View.INVISIBLE);
+        mTextViewCountDown.setText("30:00");
+    }
 
     private void updateCountDownText() {
         int min = (int) (mTimeLeftInMillis / 1000) / 60;
         int sec = (int) (mTimeLeftInMillis / 1000) % 60;
         String timeLeftFormat = String.format(Locale.getDefault(),"%02d:%02d", min, sec);
         mTextViewCountDown.setText(timeLeftFormat);
+    }
 
-        System.out.println("Hello");
+    public void openDialog(){
+        ImageView img = new ImageView(this);
+        img.setImageResource(R.drawable.sad_cat);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("You've abandoned your search...");
+        builder.setMessage("");
+        builder.setPositiveButton("Go to Collections", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(MainActivity.this, Collections.class);
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Go to Home", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //go home
+            }
+        });
+
+        builder.setView(img);
+        builder.create().show();
+
+    }
+
+
+    public void ShowPopupLeave(View v){
+        TextView txtclose;
+        Button btn_home;
+        Button btn_collect;
+        pop.setContentView(R.layout.custom_popup);
+        ImageView cat = (ImageView) pop.findViewById(R.id.cat_img);
+        TextView cat_label = (TextView) pop.findViewById(R.id.cat_label);
+        cat.setImageResource(R.drawable.sad_cat);
+        cat_label.setText("You've abandoned your search...");
+        txtclose = (TextView) pop.findViewById(R.id.pop_close);
+        btn_home = (Button) pop.findViewById(R.id.btn_home);
+        btn_collect = (Button) pop.findViewById(R.id.btn_collect);
+        btn_collect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Collections.class);
+                startActivity(intent);
+            }
+        });
+        txtclose.setVisibility(View.INVISIBLE);
     }
 
     public void ShowPopup(View v){
@@ -134,8 +221,6 @@ public class MainActivity extends AppCompatActivity {
         TextView cat_label = (TextView) pop.findViewById(R.id.cat_label);
         Random rand = new Random();
         int i = rand.nextInt(images.length);
-        //{"tom", "felix","hello_kitty", "pusheen", "garfield", "cat_hat",
-        //    "puss_boots", "chesire", "catdog"};
         switch(images[i]){
             case "tom":
                 cat.setImageResource(R.drawable.tom);
@@ -184,8 +269,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
         }
-
-
         txtclose = (TextView) pop.findViewById(R.id.pop_close);
         btn_home = (Button) pop.findViewById(R.id.btn_home);
         btn_collect = (Button) pop.findViewById(R.id.btn_collect);
@@ -201,14 +284,15 @@ public class MainActivity extends AppCompatActivity {
         txtclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resetTimer();
                 pop.dismiss();
             }
         });
-        //cat1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         pop.show();
     }
 
 
 
 }
+
 
