@@ -5,24 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomePage"
-    android:background="@drawable/cat_patternbg">
+    android:background="@color/lavender">
+<!--    android:background="@drawable/cat_patternbg"-->
 
-    <ProgressBar
-        android:id="@+id/indeterminateBar"
-        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Inverse"
-        android:layout_width="235dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginBottom="96dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:indeterminateTint="@android:color/holo_red_dark"
-        android:indeterminateDuration="@android:integer/config_mediumAnimTime"/>
+
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/indeterminateBar"-->
+<!--        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Inverse"-->
+<!--        android:layout_width="235dp"-->
+<!--        android:layout_height="53dp"-->
+<!--        android:layout_marginStart="80dp"-->
+<!--        android:layout_marginLeft="80dp"-->
+<!--        android:layout_marginEnd="80dp"-->
+<!--        android:layout_marginRight="80dp"-->
+<!--        android:layout_marginBottom="96dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:indeterminateTint="@android:color/holo_red_dark"-->
+<!--        android:indeterminateDuration="@android:integer/config_mediumAnimTime"/>-->
 
     <ImageView
         android:id="@+id/Pusheenimg"
@@ -40,41 +43,43 @@
 
     <TextView
         android:id="@+id/Headline"
-        android:layout_width="269dp"
-        android:layout_height="170dp"
-        android:background="@android:color/white"
+        android:layout_width="272dp"
+        android:layout_height="234dp"
+        android:background="@color/lavender"
         android:contentDescription="@string/app_name"
-        android:text="Study Hard and Become the Cat Lord!"
+        android:fontFamily="@font/copse"
+        android:gravity="center"
+        android:text="Make studying more enjoyable with eduCATe!"
         android:textAlignment="center"
-        android:fontFamily="sans-serif-condensed"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175"
-        tools:text="Study Hard and Become the Cat Lord!"
-        android:textColor="@android:color/holo_orange_light"
-        android:gravity="center_horizontal" />
+        app:layout_constraintVertical_bias="0.153"
+        tools:text="Make studying more enjoyable with eduCATe!" />
 
     <TextView
         android:id="@+id/Subline"
-        android:layout_width="158dp"
-        android:layout_height="36dp"
+        android:layout_width="245dp"
+        android:layout_height="35dp"
         android:contentDescription="@string/app_name"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="Your Next Cat!"
+        android:fontFamily="@font/copse"
+        android:gravity="center_horizontal"
+        android:text="Collect them all!"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/btn_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499"
-        tools:text="Your Next Cat!"
-        android:gravity="center_horizontal" />
+        tools:text="Collect them all!" />
 
     <ImageButton
         android:id="@+id/imgbtn_collections3"

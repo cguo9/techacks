@@ -76,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
         WebSettings settings_right = web_right.getSettings();
         settings_left.setJavaScriptEnabled(true);
         settings_right.setJavaScriptEnabled(true);
-        String file_l = "file:android_asset/cat_right.gif";
+        String file_l = "file:android_asset/cat_l3.gif";
 
-        String file_r = "file:android_asset/gif_l.gif";
+        String file_r = "file:android_asset/cat_r.gif";
         web_right.loadUrl(file_r);
         web_left.loadUrl(file_l);
 
