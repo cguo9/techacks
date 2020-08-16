@@ -93,6 +93,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton imgbtn_h;
+        imgbtn_h = (ImageButton) findViewById(R.id.imgbtn_home);
+        imgbtn_h.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, HomePage.class);
+                startActivity(intent);
+            }
+        });
+
+
         pop = new Dialog(this);
         time_select = (Spinner) findViewById(R.id.dropdown);
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MainActivity.this,

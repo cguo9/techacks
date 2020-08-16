@@ -6,19 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".Collections">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/collectRecView"
         android:layout_centerHorizontal="true"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go back to timer"
-        android:id="@+id/gobacktime"
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Go back to timer"-->
+<!--        android:id="@+id/gobacktime"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_below="@id/collectRecView"-->
+<!--        />-->
+
+    <ImageButton
+        android:id="@+id/imgbtn_collections2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/collectRecView"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="51dp"
+        android:background="?android:attr/windowBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/paw"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_study2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/collectRecView"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/collectRecView"/>
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginRight="180dp"
+        android:layout_marginBottom="51dp"
+        android:background="?android:attr/windowBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/timer"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_home2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/collectRecView"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="348dp"
+        android:layout_marginRight="348dp"
+        android:layout_marginBottom="51dp"
+        android:background="?android:attr/windowBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/home"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:visibility="visible" />
 
 </RelativeLayout>
 

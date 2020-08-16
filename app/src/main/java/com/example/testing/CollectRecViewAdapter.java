@@ -39,12 +39,12 @@ public class CollectRecViewAdapter extends RecyclerView.Adapter<CollectRecViewAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.colName.setText(cats.get(position).getName());
-        holder.parent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context, cats.get(position).getName() + " Selected", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        holder.parent.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(context, cats.get(position).getName() + " Selected", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         Glide.with(context)
                 .asBitmap()
