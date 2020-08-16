@@ -33,18 +33,18 @@
         android:layout_height="166dp"
         android:background="#F4C7B2"
         android:scaleType="centerInside"
+        android:src="@drawable/pusheen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711"
-        android:src="@drawable/pusheen" />
+        app:layout_constraintVertical_bias="0.538" />
 
     <TextView
         android:id="@+id/Headline"
-        android:layout_width="272dp"
-        android:layout_height="234dp"
+        android:layout_width="343dp"
+        android:layout_height="148dp"
         android:background="@color/lavender"
         android:contentDescription="@string/app_name"
         android:fontFamily="@font/copse"
@@ -53,13 +53,12 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/colorPrimary"
-        android:textSize="40sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153"
+        app:layout_constraintVertical_bias="0.054"
         tools:text="Make studying more enjoyable with eduCATe!" />
 
     <TextView
@@ -75,10 +74,9 @@
         android:textColor="@color/btn_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintVertical_bias="0.301"
         tools:text="Collect them all!" />
 
     <ImageButton
@@ -127,4 +125,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:fontFamily="@font/copse"
+        android:textColor="@color/btn_dark"
+        android:background="@color/btn_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Pusheenimg"
+        app:layout_constraintVertical_bias="0.244" />
 </androidx.constraintlayout.widget.ConstraintLayout>

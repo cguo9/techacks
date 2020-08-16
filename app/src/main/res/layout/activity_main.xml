@@ -62,7 +62,7 @@
         android:layout_marginRight="1dp"
         android:layout_marginBottom="22dp"
         android:fontFamily="@font/copse"
-        android:text="Start"
+        android:text="Study"
         android:textColor="@color/btn_dark"
         android:background="@color/btn_color"
         app:layout_constraintBottom_toTopOf="@+id/claim_btn"
