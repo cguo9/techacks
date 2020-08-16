@@ -307,6 +307,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, HomePage.class);
+                startActivity(intent);
+            }
+        });
+
 
         txtclose.setOnClickListener(new View.OnClickListener() {
             @Override
